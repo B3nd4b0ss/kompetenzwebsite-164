@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>M164 Kompetenzquiz</title>
+		<meta
+			name="description"
+			content="Interaktive Quizwebsite für M164 mit eigenen Fragen zu jeder Kompetenz und jeder Schwierigkeitsstufe." />
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<main class="page-shell">
+			<section class="hero">
+				<div class="hero-copy">
+					<p class="eyebrow">
+						M164 Datenbanken erstellen und Daten einfügen
+					</p>
+					<h1>Kompetenzen anklicken, Quiz starten, Score prüfen</h1>
+					<p class="lead">
+						Wähle zuerst die Schwierigkeit und dann die passende
+						Kompetenz. Jede Kombination aus Kompetenz und
+						Schwierigkeit hat ein eigenes Quiz mit mindestens 5
+						selbst formulierten Fragen. Bestanden ist ein Quiz nur
+						mit mehr als 80&nbsp;% richtigen Antworten.
+					</p>
+				</div>
+
+				<aside class="hero-panel">
+					<p class="panel-label">Quizregeln</p>
+					<ul class="rule-list">
+						<li>Ein Quiz pro Kompetenz und Schwierigkeit</li>
+						<li>Mindestens 5 Fragen pro Quiz</li>
+						<li>Auswertung erst am Ende</li>
+						<li>Bestanden nur bei mehr als 80 %</li>
+					</ul>
+					<a
+						class="source-link"
+						href="https://kompetenzmatrix.ch/v1/cluster-data/m164/"
+						target="_blank"
+						rel="noreferrer">
+						Kompetenzmatrix als Referenz
+					</a>
+				</aside>
+			</section>
+
+			<section class="overview-panel">
+				<div class="section-head">
+					<div>
+						<p class="eyebrow">Kompetenzübersicht</p>
+						<h2>Wähle eine Kompetenz</h2>
+						<p class="section-copy">
+							Die Titel orientieren sich an M164. Die Fragen sind
+							eigens für diese Lernwebsite geschrieben und nicht
+							direkt aus der Matrix übernommen. Das angezeigte
+							Kompetenzziel pro Stufe stammt aus der offiziellen
+							Matrix.
+						</p>
+						<div class="difficulty-toolbar">
+							<p class="panel-label">Schwierigkeit filtern</p>
+							<div
+								id="difficulty-switcher"
+								class="segmented-control"
+								role="tablist"
+								aria-label="Schwierigkeitsstufen">
+								<button
+									type="button"
+									class="segment is-active"
+									data-level="G"
+									role="tab"
+									aria-selected="true">
+									Grundlagen
+								</button>
+								<button
+									type="button"
+									class="segment"
+									data-level="F"
+									role="tab"
+									aria-selected="false">
+									Fortgeschritten
+								</button>
+								<button
+									type="button"
+									class="segment"
+									data-level="E"
+									role="tab"
+									aria-selected="false">
+									Erweitert
+								</button>
+								<button
+									type="button"
+									class="segment"
+									data-level="ALL"
+									role="tab"
+									aria-selected="false">
+									Alle anzeigen
+								</button>
+							</div>
+						</div>
+					</div>
+					<div
+						id="overview-stats"
+						class="overview-stats"
+						aria-live="polite"></div>
+				</div>
+
+				<div
+					id="competence-grid"
+					class="competence-grid"
+					aria-label="Kompetenzen"></div>
+			</section>
+
+			<section
+				id="quiz-shell"
+				class="quiz-shell is-hidden"
+				aria-live="polite">
+				<div class="quiz-head">
+					<button id="back-button" class="ghost-button" type="button">
+						Zur Kompetenzübersicht
+					</button>
+
+					<div class="quiz-title-wrap">
+						<p class="eyebrow">Aktives Quiz</p>
+						<h2 id="quiz-title">Noch keine Kompetenz gewählt</h2>
+						<p id="quiz-summary" class="section-copy"></p>
+						<div id="quiz-objective" class="objective-box"></div>
+					</div>
+
+					<div id="quiz-badges" class="quiz-badges"></div>
+				</div>
+
+				<form id="quiz-form" class="quiz-form">
+					<div id="quiz-content" class="quiz-content"></div>
+
+					<div class="quiz-actions">
+						<button
+							id="submit-button"
+							class="primary-button"
+							type="submit">
+							Quiz auswerten
+						</button>
+						<button
+							id="restart-button"
+							class="ghost-button"
+							type="button">
+							Quiz neu starten
+						</button>
+					</div>
+				</form>
+
+				<section
+					id="result-panel"
+					class="result-panel"
+					hidden></section>
+			</section>
+		</main>
+
+		<script src="./script.js"></script>
+	</body>
+</html>

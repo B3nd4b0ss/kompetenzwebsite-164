@@ -1,0 +1,1235 @@
+﻿{
+  "module": "M164 Datenbanken erstellen und Daten einfügen",
+  "passThreshold": 80,
+  "competencies": [
+    {
+      "id": "a1",
+      "code": "A1",
+      "title": "Logisch relationales Modell interpretieren",
+      "summary": "ERD lesen, Beziehungen verstehen und Modelle kritisch beurteilen.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Welche Aussage beschreibt eine Entität in einem ERD am besten?",
+            "options": [
+              "Ein Objekt oder Fachbegriff, zu dem Daten gespeichert werden",
+              "Eine Sortierreihenfolge für SQL-Abfragen",
+              "Ein Importformat für CSV-Dateien",
+              "Ein Kommentar im Quellcode"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was bedeutet die Kardinalität 1:n zwischen Kunde und Bestellung?",
+            "options": [
+              "Ein Kunde gehört immer zu mehreren Bestellungen gleichzeitig",
+              "Eine Bestellung kann vielen Kunden gleichzeitig gehören",
+              "Ein Kunde kann mehrere Bestellungen haben, eine Bestellung aber nur einen Kunden",
+              "Kunde und Bestellung sind eigentlich dieselbe Entität"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "prompt": "Wofür steht ein Primärschlüssel in einem Datenmodell?",
+            "options": [
+              "Für die Standardsprache der Datenbank",
+              "Für die eindeutige Identifikation eines Datensatzes",
+              "Für die Reihenfolge beim Export",
+              "Für die Hintergrundfarbe einer Tabelle"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "prompt": "Welches Beispiel ist ein Attribut der Entität Produkt?",
+            "options": [
+              "Produktname",
+              "Kundenbestellung",
+              "Rechnung erzeugen",
+              "Backup erstellen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was drückt eine Beziehung zwischen zwei Entitäten aus?",
+            "options": [
+              "Dass beide Tabellen dieselbe Anzahl Spalten haben",
+              "Dass zwischen den Fachobjekten ein Zusammenhang besteht",
+              "Dass beide Tabellen automatisch gleich sortiert werden",
+              "Dass keine Schlüssel mehr benötigt werden"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "F": [
+          {
+            "prompt": "In einem Bibliotheksmodell gibt es die Entitäten Mitglied, Buch und Ausleihe. Warum ist Ausleihe als eigene Entität sinnvoll?",
+            "options": [
+              "Weil sonst keine Texte gespeichert werden können",
+              "Weil Ausleihe den Zusammenhang zwischen Mitglied und Buch plus Zusatzinfos wie Datum abbildet",
+              "Weil ein Buch nie mit einem Mitglied verbunden werden darf",
+              "Weil jede Datenbank genau drei Entitäten braucht"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "prompt": "Wie modellierst du am klarsten, dass ein Student viele Kurse besuchen kann und ein Kurs viele Studierende hat?",
+            "options": [
+              "Mit einer Zwischentabelle für Einschreibungen",
+              "Mit nur einer Textspalte namens kurse",
+              "Mit einer Sortierung nach Alphabet",
+              "Mit gar keiner Beziehung"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Ein Kunde kann beliebig viele Telefonnummern haben. Welche Modellierung ist am sinnvollsten?",
+            "options": [
+              "Die Spalten telefon1 bis telefon10 im Kundenobjekt",
+              "Eine separate Entität Telefonnummer mit Bezug zum Kunden",
+              "Nur eine Telefonnummer für alle Kunden gemeinsam",
+              "Telefonnummern gar nicht speichern"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "prompt": "Du willst ein Modell in Tabellen umsetzen. Welche Tabellen erstellst du normalerweise zuerst?",
+            "options": [
+              "Die Tabellen ohne Abhängigkeit auf andere Tabellen",
+              "Nur die Tabellen mit den meisten Spalten",
+              "Immer zuerst die Zwischentabellen",
+              "Nur Tabellen mit Textfeldern"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum braucht ein Onlineshop oft eine eigene Entität Bestellposition?",
+            "options": [
+              "Damit jede Bestellung genau ein Produkt enthalten muss",
+              "Damit Produkte automatisch alphabetisch werden",
+              "Damit pro Bestellung mehrere Produkte mit Menge sauber abgebildet werden können",
+              "Damit Fremdschlüssel vermieden werden"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "E": [
+          {
+            "prompt": "In einem Rechnungsmodell wird der Produktpreis nur in der Produkttabelle gespeichert. Welcher Modellfehler entsteht dadurch?",
+            "options": [
+              "Alte Rechnungen zeigen nach einer Preisänderung nicht mehr den damaligen Preis",
+              "Die Datenbank kann keine Zahlen mehr speichern",
+              "Primärschlüssel funktionieren nicht mehr",
+              "Rechnungen können nicht exportiert werden"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Eine Zwischentabelle für Kursanmeldungen hat student_id und kurs_id, aber keine Regel gegen doppelte Kombinationen. Was ist die beste Verbesserung?",
+            "options": [
+              "Beide Spalten löschen",
+              "Eine eindeutige Regel auf die Kombination student_id und kurs_id setzen",
+              "Die Tabelle nur noch als CSV speichern",
+              "Alle IDs als Text ablegen"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "prompt": "Im Mitarbeitermodell existieren die Spalten projekt1_id, projekt2_id und projekt3_id. Welche Modellverbesserung passt am besten?",
+            "options": [
+              "Mehr solcher Spalten anlegen",
+              "Die Projekte als Freitext in eine einzige Spalte schreiben",
+              "Eine eigene Zuordnungstabelle zwischen Mitarbeiter und Projekt einführen",
+              "Das Modell so lassen, weil es schneller wirkt"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "prompt": "In einer Tabelle werden Statuswerte frei als Text gespeichert, zum Beispiel offen, Offen, OFFEN. Welche Verbesserung ist fachlich sauberer?",
+            "options": [
+              "Statuswerte gar nicht mehr speichern",
+              "Eine kontrollierte Werteliste oder Referenztabelle verwenden",
+              "Jede Schreibweise erlauben",
+              "Status nur noch in Dateinamen speichern"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "prompt": "Ein Lieferant kann mehrere Kontaktpersonen haben, im Modell stehen aber kontakt_name und kontakt_mail direkt in der Lieferantenentität. Was wäre die bessere Modellierung?",
+            "options": [
+              "Eine separate Kontakt-Entität mit Bezug zum Lieferanten",
+              "Die Mailadresse in den Primärschlüssel verschieben",
+              "Kontakte nur als Screenshot speichern",
+              "Jede Kontaktperson als neue Lieferantenzeile erfassen"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "b1",
+      "code": "B1",
+      "title": "Logisch relationales Modell umsetzen",
+      "summary": "Modelle in einem DBMS sauber als Datenbankstruktur anlegen.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Was ist ein Schema in einem Datenbanksystem?",
+            "options": [
+              "Ein Bereich zur Organisation von Datenbankobjekten",
+              "Eine Excel-Datei für Exporte",
+              "Ein Passwort für den Server",
+              "Eine Farbe für Tabellen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was beschreibt eine Tabelle in einer relationalen Datenbank?",
+            "options": [
+              "Eine Sammlung von Datensätzen zu einem Thema",
+              "Nur eine Liste von SQL-Befehlen",
+              "Nur die Benutzeroberfläche des DB-Tools",
+              "Ein Backup des ganzen Servers"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist eine Spalte oder ein Feld in einer Tabelle?",
+            "options": [
+              "Ein einzelner Datensatz",
+              "Ein Attribut mit einem bestimmten Datentyp",
+              "Immer der Primärschlüssel",
+              "Nur ein Kommentar für Admins"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "prompt": "Wofür wird DDL typischerweise verwendet?",
+            "options": [
+              "Für das Ändern der Datenstruktur",
+              "Für das Zeichnen von Icons",
+              "Für das Versenden von E-Mails",
+              "Für die Komprimierung von Backups"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was beeinflusst ein Zeichensatz in einer Datenbank?",
+            "options": [
+              "Wie Text gespeichert und dargestellt werden kann",
+              "Wie schnell ein Auto fährt",
+              "Wie viele Tabellen eine Datenbank maximal hat",
+              "Ob Fremdschlüssel erlaubt sind"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Was ist beim Umsetzen eines Modells im Tool oft der erste sinnvolle Schritt?",
+            "options": [
+              "Zuerst die Datenbank oder das Schema anlegen",
+              "Zuerst Daten importieren, ohne Struktur",
+              "Zuerst alle Tabellen wieder löschen",
+              "Nur die Sortierung definieren"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum definierst du Primärschlüssel möglichst früh beim Anlegen von Tabellen?",
+            "options": [
+              "Damit Datensätze eindeutig identifizierbar sind und Beziehungen sauber aufgebaut werden können",
+              "Damit weniger Spalten sichtbar sind",
+              "Damit keine Benutzer mehr anmelden können",
+              "Damit die Tabelle automatisch exportiert wird"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wo legst du in einem DB-Tool typischerweise fest, ob ein Feld Pflicht ist oder eine feste Länge hat?",
+            "options": [
+              "In den Eigenschaften der jeweiligen Spalte",
+              "Nur im Dateinamen der Tabelle",
+              "Ausschliesslich im Browsercache",
+              "Im Benutzerprofil des Admins"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Du hast eine Kindtabelle erstellt und willst die Beziehung zur Elterntabelle abbilden. Was machst du als Nächstes?",
+            "options": [
+              "Einen Fremdschlüssel auf die passende Elterntabelle setzen",
+              "Die Elterntabelle in Textform kopieren",
+              "Alle IDs neu nummerieren",
+              "Die Beziehung nur im Kommentar beschreiben"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Im Modell kommt ein neues Attribut hinzu. Wie setzt du die Änderung sinnvoll im Tool um?",
+            "options": [
+              "Die betroffene Tabelle um eine passende Spalte erweitern",
+              "Die ganze Datenbank sofort löschen",
+              "Nur die Tabellenfarbe ändern",
+              "Das Attribut in eine Word-Datei schreiben"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Mit welchem SQL-Befehl legst du eine neue Tabelle direkt per DDL an?",
+            "options": [
+              "CREATE TABLE",
+              "INSERT TABLE",
+              "OPEN TABLE",
+              "LOAD TABLE"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher SQL-Befehl passt, wenn du einer bestehenden Tabelle eine neue Spalte hinzufügen willst?",
+            "options": [
+              "ALTER TABLE",
+              "SELECT TABLE",
+              "GROUP TABLE",
+              "CHECK TABLES ONLY"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wodurch wird in DDL direkt sichtbar, dass eine Tabelle auf eine andere verweist?",
+            "options": [
+              "Durch eine FOREIGN KEY Definition",
+              "Durch ORDER BY",
+              "Durch einen Exportfilter",
+              "Durch eine Hintergrundgrafik"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum sollten DDL-Skripte bei abhängigen Tabellen in einer sinnvollen Reihenfolge ausgeführt werden?",
+            "options": [
+              "Weil sonst Fremdschlüssel auf noch nicht vorhandene Tabellen zeigen können",
+              "Weil SQL sonst automatisch in JSON wechselt",
+              "Weil Reihenfolge in Datenbanken nie eine Rolle spielt",
+              "Weil zuerst immer die grösste Tabelle dran sein muss"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist es bei grösseren Projekten sinnvoll, die DDL in Skripten versioniert abzulegen?",
+            "options": [
+              "Weil die Struktur reproduzierbar, nachvollziehbar und wiederholbar wird",
+              "Weil damit Fremdschlüssel automatisch verschwinden",
+              "Weil Daten dann nicht mehr gespeichert werden",
+              "Weil dadurch keine Benutzerrechte mehr nötig sind"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "b2",
+      "code": "B2",
+      "title": "Datentypen gezielt anwenden",
+      "summary": "Für jeden Anwendungsfall passende Datentypen und Feldeigenschaften wählen.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Welcher Datentyp passt am besten für eine ganze Mitarbeiternummer ohne Nachkommastellen?",
+            "options": ["INTEGER", "DATE", "BOOLEAN", "BLOB"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher Datentyp passt für ein Geburtsdatum?",
+            "options": ["DATE", "VARCHAR", "BOOLEAN", "BINARY"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher Datentyp ist für einen Preis mit Rappen am sinnvollsten?",
+            "options": ["DECIMAL", "BOOLEAN", "DATE", "TEXT"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher Datentyp passt für die Information aktiv oder inaktiv?",
+            "options": ["BOOLEAN", "DATE", "TEXT", "FLOAT für den Fall"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher Datentyp eignet sich am ehesten für eine lange Produktbeschreibung?",
+            "options": ["TEXT", "INTEGER", "DATE", "BOOLEAN"],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Warum sollte eine Postleitzahl häufig als Text und nicht als Zahl gespeichert werden?",
+            "options": [
+              "Weil führende Nullen erhalten bleiben sollen",
+              "Weil Text immer weniger Speicher braucht",
+              "Weil Zahlen in Datenbanken nicht sortiert werden können",
+              "Weil Fremdschlüssel nur mit Text funktionieren"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Für ein Alter zwischen 0 und 130 Jahren wäre welche Wahl am sinnvollsten?",
+            "options": [
+              "Ein ganzzahliger Datentyp mit kleinem Wertebereich",
+              "Ein Textfeld mit beliebiger Länge",
+              "Ein Bildformat",
+              "Ein Datum mit Uhrzeit"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher Datentyp passt für einen Termin mit Datum und Uhrzeit zusammen?",
+            "options": ["DATETIME oder TIMESTAMP", "BOOLEAN", "INTEGER nur wegen der Sortierung", "CHAR(1)"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welcher Datentyp ist für den Inhalt einer hochgeladenen Datei am passendsten?",
+            "options": ["Ein Binär- oder Blob-Typ", "BOOLEAN", "DATE", "Nur VARCHAR(5)"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Du speicherst einen Durchschnittswert wie 4.75. Welche Wahl passt am besten?",
+            "options": [
+              "Ein numerischer Typ mit Nachkommastellen",
+              "Ein Wahr/Falsch-Feld",
+              "Nur eine Datumsspalte",
+              "Ein Binärfeld"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Welche Kombination passt für eine E-Mail-Adresse, die immer vorhanden und pro Benutzer eindeutig sein muss?",
+            "options": [
+              "Texttyp plus NOT NULL und UNIQUE",
+              "BOOLEAN plus DEFAULT TRUE",
+              "DATE ohne weitere Regeln",
+              "BLOB ohne Einschränkung"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Ein Ticketstatus soll automatisch mit offen starten. Welche Eigenschaft passt dazu?",
+            "options": ["DEFAULT 'offen'", "DROP COLUMN", "ORDER BY status", "Nur NULL erlauben"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Eigenschaft ist typisch für eine technische Laufnummer als Primärschlüssel?",
+            "options": [
+              "Auto-Increment oder Identity",
+              "Mehrfachwerte pro Feld",
+              "Freitext ohne Begrenzung",
+              "Bilddaten als Schlüssel"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Ein Spitzname ist optional. Welche technische Entscheidung passt?",
+            "options": [
+              "Das Feld darf NULL sein",
+              "Das Feld muss UNIQUE und NOT NULL sein",
+              "Das Feld muss immer eine Zahl enthalten",
+              "Das Feld muss automatisch hochzählen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Eine Menge darf niemals negativ sein. Welche Ergänzung schützt die Daten am besten?",
+            "options": [
+              "Eine Constraint-Regel wie menge >= 0",
+              "Eine Sortierung nach Alphabet",
+              "Nur ein längerer Spaltenname",
+              "Eine zweite Datumsspalte"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "b3",
+      "code": "B3",
+      "title": "Beziehungen und Assoziationen umsetzen",
+      "summary": "Primär- und Fremdschlüssel sowie Beziehungstypen korrekt einsetzen.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Was ist der Hauptzweck eines Fremdschlüssels?",
+            "options": [
+              "Eine Verbindung zu einem Datensatz in einer anderen Tabelle herzustellen",
+              "Text automatisch in Grossbuchstaben umzuwandeln",
+              "Den Server herunterzufahren",
+              "Datensätze zu komprimieren"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie verhalten sich Primärschlüssel und Fremdschlüssel typischerweise zueinander?",
+            "options": [
+              "Der Fremdschlüssel verweist auf den Primärschlüssel einer anderen Tabelle",
+              "Beide duplizieren immer denselben Datensatz",
+              "Sie dürfen nie in zwei Tabellen vorkommen",
+              "Primärschlüssel sind nur für Texte erlaubt"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welches Beispiel beschreibt eine 1:n-Beziehung?",
+            "options": [
+              "Eine Kategorie enthält viele Produkte",
+              "Ein Produkt hat genau null Tabellen",
+              "Jede Bestellung gehört zu allen Kunden",
+              "Ein Preis hat mehrere Datenbanken"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist bei einer n:m-Beziehung meist nötig?",
+            "options": ["Eine Zwischentabelle", "Eine ZIP-Datei", "Ein CSS-Framework", "Eine zweite Datenbankinstanz"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist ein Primärschlüssel in Beziehungstabellen wichtig?",
+            "options": [
+              "Weil Datensätze sonst nicht eindeutig identifizierbar sind",
+              "Weil Tabellen sonst keine Farben haben",
+              "Weil SQL ohne Primärschlüssel nicht startet",
+              "Weil Exporte sonst automatisch gelöscht werden"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Wie modellierst du in der Datenbank, dass jede Bestellung genau einem Kunden gehört?",
+            "options": [
+              "Die Tabelle Bestellung erhält eine customer_id als Fremdschlüssel",
+              "Der Kunde erhält für jede Bestellung eine neue Spalte",
+              "Bestellung und Kunde kommen in dieselbe Zelle",
+              "Es wird gar kein Schlüssel benötigt"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie setzt du um, dass eine Bestellung mehrere Produkte mit Menge enthalten kann?",
+            "options": [
+              "Mit einer Tabelle Bestellposition zwischen Bestellung und Produkt",
+              "Mit einer langen Textspalte produktliste",
+              "Mit einem Screenshot der Produkte",
+              "Mit mehreren Primärschlüsseln in einer einzigen Zelle"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie stellst du technisch sicher, dass jede Rechnungsposition immer zu einer Rechnung gehört?",
+            "options": [
+              "Mit einem Fremdschlüssel, der nicht NULL sein darf",
+              "Mit einer alphabetischen Sortierung",
+              "Mit einer zweiten Farbe in der Tabelle",
+              "Mit einem Textfeld ohne Regel"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Eine Kindtabelle soll auf genau einen Datensatz der Elterntabelle verweisen. Welche Spalte braucht sie?",
+            "options": [
+              "Eine Spalte mit dem Schlüssel der Elterntabelle",
+              "Nur ein Datum ohne Bezug",
+              "Ausschliesslich eine Beschreibung",
+              "Gar keine eigene Spalte"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Ein Mitarbeiter kann optional einer Abteilung zugeordnet werden. Welche technische Umsetzung ist passend?",
+            "options": [
+              "Ein Fremdschlüssel, der NULL sein darf",
+              "Die Abteilung als Bilddatei",
+              "Nur eine Sortierung nach Mitarbeiternamen",
+              "Ein zweiter Primärschlüssel in derselben Spalte"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Wann ist ON DELETE CASCADE zwischen Bestellung und Bestellposition fachlich oft sinnvoll?",
+            "options": [
+              "Wenn Positionen ohne Bestellung keine Bedeutung haben sollen",
+              "Wenn Bestellungen nie gelöscht werden dürfen",
+              "Wenn alle Tabellen identisch sein müssen",
+              "Wenn nur Texte gespeichert werden"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wann passt ON DELETE RESTRICT besser als CASCADE?",
+            "options": [
+              "Wenn ein Kunde mit bestehenden Rechnungen nicht einfach gelöscht werden soll",
+              "Wenn alle Kinddatensätze automatisch verschwinden sollen",
+              "Wenn keine Fremdschlüssel vorhanden sind",
+              "Wenn die Tabelle nur drei Spalten hat"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wofür ist ON UPDATE CASCADE gedacht?",
+            "options": [
+              "Änderungen am referenzierten Schlüssel in abhängige Tabellen zu übertragen",
+              "Zum Export als CSV",
+              "Zum Einfärben von Tabellen",
+              "Zum Sperren aller SELECT-Abfragen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Regel verhindert doppelte Kombinationen in einer n:m-Zuordnungstabelle am besten?",
+            "options": [
+              "Eine eindeutige Regel auf beide Fremdschlüssel zusammen",
+              "Einfach dieselbe Tabelle zweimal anlegen",
+              "Nur ein ORDER BY verwenden",
+              "Alle Schlüssel als Freitext speichern"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was sollte für einen sauberen Fremdschlüssel immer gelten?",
+            "options": [
+              "Datentyp und Bedeutung müssen zum referenzierten Schlüssel passen",
+              "Er sollte immer länger sein als alle anderen Spalten",
+              "Er darf nie indiziert werden",
+              "Er muss automatisch ein Datum enthalten"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "c1",
+      "code": "C1",
+      "title": "Mit Struktur und Daten umgehen",
+      "summary": "Tabellenaufbau verstehen und Datensätze korrekt einfügen.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Was gehört zur Struktur einer Tabelle?",
+            "options": [
+              "Spaltennamen, Datentypen und Regeln",
+              "Nur die bereits eingegebenen Kunden",
+              "Nur exportierte CSV-Dateien",
+              "Nur die Bildschirmgrösse des Benutzers"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist ein Datensatz in einer Tabelle?",
+            "options": [
+              "Eine einzelne Zeile mit konkreten Werten",
+              "Die komplette Datenbanksoftware",
+              "Eine SQL-Funktion für Sortierung",
+              "Die Beschreibung des Projekts"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was veränderst du, wenn du eine neue Spalte hinzufügst?",
+            "options": ["Die Struktur", "Nur eine einzelne Zeile", "Nur die Sortierreihenfolge", "Nur das Passwort"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was passiert, wenn du einen neuen Kunden als Zeile speicherst?",
+            "options": [
+              "Die Daten ändern sich, nicht die Struktur",
+              "Die Struktur wird automatisch gelöscht",
+              "Alle Tabellen werden neu angelegt",
+              "Die Datenbank wird zu JSON"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist der Unterschied zwischen Tabelle löschen und Datensatz löschen?",
+            "options": [
+              "Beim Tabellenlöschen verschwindet die ganze Struktur, beim Datensatzlöschen nur eine Zeile",
+              "Es gibt keinen Unterschied",
+              "Datensatz löschen entfernt immer die ganze Datenbank",
+              "Tabellenlöschen sortiert nur neu"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Was solltest du vor dem manuellen Einfügen eines Datensatzes im Tool zuerst prüfen?",
+            "options": [
+              "Welche Felder Pflichtfelder sind",
+              "Ob die Mausfarbe stimmt",
+              "Ob der Desktop-Hintergrund dunkel ist",
+              "Ob die Tabelle exportiert wurde"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie gehst du in einem Eingabeformular mit einer automatisch erzeugten ID meist um?",
+            "options": [
+              "Du lässt sie leer oder vom System generieren",
+              "Du schreibst immer 999 hinein",
+              "Du löschst die ganze Spalte",
+              "Du ersetzt sie durch ein Bild"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Worauf musst du bei einem Datenimport im Tool besonders achten?",
+            "options": [
+              "Dass Datei-Spalten und Datenbankspalten korrekt zugeordnet werden",
+              "Dass alle Texte gross geschrieben sind",
+              "Dass keine Fremdschlüssel existieren",
+              "Dass nur eine Zeile importiert wird"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist bei mehreren neuen Datensätzen im Tool oft sinnvoller als Eintrag für Eintrag tippen?",
+            "options": [
+              "Eine Mehrfach- oder Importfunktion verwenden",
+              "Alle Werte in den Tabellennamen schreiben",
+              "Jede Zeile als Bild speichern",
+              "Nur den ersten Datensatz erfassen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie kontrollierst du nach dem Einfügen sinnvoll, ob die Daten angekommen sind?",
+            "options": [
+              "Mit einer kurzen Anzeige oder Abfrage auf die eingefügten Zeilen",
+              "Nur durch Schätzen",
+              "Gar nicht, weil Datenbanken immer recht haben",
+              "Durch Ändern des Zeichensatzes"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Welche SQL-Struktur passt für das Einfügen eines einzelnen Datensatzes?",
+            "options": [
+              "INSERT INTO tabelle (spalte1, spalte2) VALUES (wert1, wert2)",
+              "CREATE INTO tabelle VALUES (...)",
+              "SELECT VALUES INTO tabelle",
+              "ORDER BY INTO tabelle"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie fügst du mehrere Datensätze in einem SQL-Befehl ein?",
+            "options": [
+              "Mit mehreren Wertegruppen hinter VALUES",
+              "Nur mit einem Screenshot",
+              "Das ist mit SQL nicht möglich",
+              "Mit GROUP BY"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist es bei INSERT oft sinnvoll, die Spalten explizit zu nennen?",
+            "options": [
+              "Weil die Zuordnung der Werte klar bleibt und Reihenfolgen weniger kritisch sind",
+              "Weil dadurch alle Datentypen zu Text werden",
+              "Weil Fremdschlüssel dadurch verschwinden",
+              "Weil die Datenbank dann keinen Primärschlüssel mehr braucht"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was passiert, wenn du eine Spalte mit Default-Wert im INSERT weggelassen hast?",
+            "options": [
+              "Die Datenbank kann den Default-Wert einsetzen",
+              "Die Tabelle wird immer gelöscht",
+              "Es wird automatisch exportiert",
+              "Alle anderen Spalten werden NULL"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Technik passt, wenn du Datensätze aus einer Staging-Tabelle in die Zieltabelle übernehmen willst?",
+            "options": [
+              "INSERT INTO ziel (...) SELECT ... FROM staging",
+              "DROP TABLE staging für den Import",
+              "Nur ORDER BY auf beiden Tabellen",
+              "Das Umbenennen der Datenbank"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "c2",
+      "code": "C2",
+      "title": "Import und Export anwenden",
+      "summary": "Daten sicher importieren, exportieren und für Bulk-Importe vorbereiten.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Was bedeutet Export im Datenbankkontext?",
+            "options": [
+              "Daten aus der Datenbank in ein anderes Format oder Zielsystem ausgeben",
+              "Eine neue Tabelle zeichnen",
+              "Die Tastatur wechseln",
+              "Nur Benutzer abmelden"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was bedeutet Import im Datenbankkontext?",
+            "options": ["Externe Daten in die Datenbank einlesen", "Die Datenbank löschen", "Eine Tabelle einfrieren", "Nur die Schriftgrösse ändern"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist eine typische Eigenschaft einer CSV-Datei?",
+            "options": [
+              "Sie speichert Werte als Text mit Trennzeichen",
+              "Sie enthält nur Bilder",
+              "Sie ist immer binar und unlesbar",
+              "Sie funktioniert nur ohne Tabellen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was solltest du vor einem CSV-Import zuerst prüfen?",
+            "options": [
+              "Ob Trennzeichen und Zeichensatz zur Datei passen",
+              "Ob der Desktop-Hintergrund dunkel ist",
+              "Ob keine Spaltennamen existieren",
+              "Ob alle Zahlen rot dargestellt werden"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche einfache Vorsicht ist vor einem grösseren Import sinnvoll?",
+            "options": [
+              "Zuerst mit einer kleinen Stichprobe testen",
+              "Sofort alle Tabellen löschen",
+              "Die Datei umbenennen und hoffen",
+              "Nur die erste Zeile importieren"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Eine CSV-Datei nutzt Semikolon statt Komma. Was musst du beim Import beachten?",
+            "options": [
+              "Das richtige Trennzeichen im Importdialog wählen",
+              "Die Datenbank in eine Textdatei umwandeln",
+              "Alle Zahlen vorher löschen",
+              "Nur den Dateinamen ändern"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wofür ist eine Kopfzeile in einer Importdatei hilfreich?",
+            "options": [
+              "Sie kann zur Zuordnung der Datei-Spalten auf Datenbankfelder dienen",
+              "Sie ersetzt jeden Primärschlüssel",
+              "Sie löscht doppelte Zeilen automatisch",
+              "Sie ist nur für Bilder relevant"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was ist beim JSON-Import oft besonders wichtig?",
+            "options": [
+              "Die Struktur der Schlüssel korrekt auf die Zielspalten abzubilden",
+              "Den Zeichensatz immer auf Bildformat zu setzen",
+              "Alle Arrays vorher zu löschen",
+              "Die Datei nur als Screenshot zu speichern"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist eine Vorschau oder Testzuordnung vor dem Bulk-Import sinnvoll?",
+            "options": [
+              "Weil man Mapping-Fehler vor dem echten Import erkennt",
+              "Weil die Datenbank sonst keine Farben hat",
+              "Weil Vorschauen Fremdschlüssel ersetzen",
+              "Weil danach keine Indizes mehr nötig sind"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Die Datei liefert Datumswerte in ungewohnter Schreibweise. Was ist die beste Reaktion?",
+            "options": [
+              "Das Datumsformat vor oder während des Imports passend umwandeln",
+              "Alle Datumswerte löschen",
+              "Die Spalte als Bild abspeichern",
+              "Nur den Tabellennamen ändern"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Welche Vorbereitung hilft vor einem Bulk-Import besonders gegen spätere Datenfehler?",
+            "options": [
+              "Leerzeichen, Formate und offensichtliche Tippfehler vorher bereinigen",
+              "Alle Datensätze ungeprüft doppelt laden",
+              "Nur die Dateiendung ändern",
+              "Das Zielschema löschen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Die Quelldatei enthält den Namen in einer Spalte, die Zieltabelle erwartet vorname und nachname. Was ist sinnvoll?",
+            "options": [
+              "Die Daten vor dem Import aufteilen oder in einer Staging-Stufe transformieren",
+              "Die Spalten in Bilder umwandeln",
+              "Alles in die ID-Spalte schreiben",
+              "Die Importdatei ignorieren"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum solltest du vor einem Massenimport doppelte Zeilen erkennen und behandeln?",
+            "options": [
+              "Damit keine redundanten oder inkonsistenten Datensätze entstehen",
+              "Damit die Datenbank keine Tabellen mehr braucht",
+              "Weil Duplikate die Sortierung schöner machen",
+              "Weil Fremdschlüssel nur mit Duplikaten laufen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Die Quelldatei nutzt ja und nein, die Zieldatenbank erwartet 1 und 0. Welche Vorbereitung passt?",
+            "options": [
+              "Die Werte vor dem Import in das erwartete Format umwandeln",
+              "Die Datenbank auf Text umstellen und nichts prüfen",
+              "Die Spalte ganz weglassen",
+              "Die Werte nur umbenennen, aber nicht transformieren"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist eine Staging-Tabelle bei komplexen Bulk-Importen oft sinnvoll?",
+            "options": [
+              "Weil Rohdaten zuerst zwischengespeichert, geprüft und bereinigt werden können",
+              "Weil dann keine Datentypen mehr nötig sind",
+              "Weil man dadurch keine Zieltabellen mehr braucht",
+              "Weil Importe nur noch im Browser stattfinden"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "c3",
+      "code": "C3",
+      "title": "Referenzielle Integrität sicherstellen",
+      "summary": "Datenkonsistenz beim Löschen und Ändern von referenzierten Daten absichern.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Was bedeutet referenzielle Integrität vereinfacht gesagt?",
+            "options": [
+              "Verweise zwischen Tabellen zeigen nur auf existierende Datensätze",
+              "Alle Tabellen haben dieselbe Anzahl Spalten",
+              "Jede Tabelle wird täglich exportiert",
+              "Alle Werte müssen alphabetisch sortiert sein"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was wäre ein typischer Verstoss gegen referenzielle Integrität?",
+            "options": [
+              "Eine Bestellung verweist auf einen Kunden, der gar nicht existiert",
+              "Eine Tabelle hat drei Spalten",
+              "Eine Abfrage sortiert absteigend",
+              "Ein Text ist länger als zehn Zeichen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum sind Fremdschlüssel für Integrität hilfreich?",
+            "options": [
+              "Sie verhindern oder prüfen ungültige Verweise",
+              "Sie machen alle Datensätze zu Bildern",
+              "Sie ersetzen Datentypen vollständig",
+              "Sie löschen automatisch jede Kindtabelle"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welches Problem kann auftreten, wenn ein Elterndatensatz gelöscht wird?",
+            "options": [
+              "Abhängige Kinddatensätze können ohne gültige Referenz zurückbleiben",
+              "Alle Texte werden grossgeschrieben",
+              "Die Datenbank stoppt für immer",
+              "Die Tabelle verliert ihren Namen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist Konsistenz zwischen Tabellen wichtig?",
+            "options": [
+              "Damit Abfragen und Geschäftslogik auf korrekten Beziehungen beruhen",
+              "Damit alle Tabellen gleich bunt aussehen",
+              "Damit keine Backups mehr nötig sind",
+              "Damit Datensätze unsichtbar werden"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Was ist die fachliche Gefahr, wenn ein Kunde gelöscht wird, obwohl noch Bestellungen auf ihn verweisen?",
+            "options": [
+              "Die Bestellungen haben danach keinen gültigen Bezug mehr",
+              "Alle Preise werden automatisch verdoppelt",
+              "Die Datenbank wechselt zu XML",
+              "Die Sortierung geht verloren"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was kann passieren, wenn sich ein referenzierter Schlüsselwert ändert und abhängige Tabellen nicht mitziehen?",
+            "options": [
+              "Verknüpfungen brechen und Verweise werden ungültig",
+              "Alle Datentypen werden Text",
+              "Die Tabellen verschwinden aus dem Tool",
+              "Nichts, denn Beziehungen sind nur Deko"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was solltest du vor dem Löschen eines Datensatzes mit vielen Abhängigkeiten zuerst tun?",
+            "options": [
+              "Prüfen, welche Kinddatensätze davon betroffen wären",
+              "Nur die Tabellenschrift ändern",
+              "Die Datenbank exportieren und sonst nichts",
+              "Alle Indizes löschen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Eine Rechnungsposition darf nie ohne Rechnung existieren. Welche technische Entscheidung unterstützt das?",
+            "options": [
+              "Ein verpflichtender Fremdschlüssel zur Rechnung",
+              "Eine optionale Bildspalte",
+              "Ein zweites Tabellenlayout",
+              "Eine leere Textspalte"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Eine Abteilung wird entfernt, Mitarbeitende verweisen aber noch auf sie. Was muss fachlich geklärt werden?",
+            "options": [
+              "Ob die Verweise blockiert, gelöscht, auf NULL gesetzt oder neu zugeordnet werden sollen",
+              "Ob die Tabellenfarbe blau oder grün ist",
+              "Ob die Maus drahtlos ist",
+              "Ob der Export im PDF-Format besser aussieht"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Welche Regel passt oft zwischen Bestellung und Bestellposition, wenn Positionen ohne Bestellung keinen Sinn ergeben?",
+            "options": ["ON DELETE CASCADE", "ON DELETE IGNORE EVERYTHING", "ORDER BY CASCADE", "CREATE VIEW ONLY"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Regel passt oft besser zwischen Kunde und Rechnung, wenn Rechnungen aus Nachweisgründen erhalten bleiben müssen?",
+            "options": ["ON DELETE RESTRICT", "ON DELETE CASCADE für alle Fälle", "ON DELETE RANDOM", "ON DELETE FORMAT"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wann ist ON DELETE SET NULL eine sinnvolle Option?",
+            "options": [
+              "Wenn eine Beziehung optional ist und der Kinddatensatz ohne den Bezug weiter existieren darf",
+              "Wenn jeder Kinddatensatz zwingend gelöscht werden muss",
+              "Wenn NULL generell verboten ist",
+              "Wenn die Spalte ein Primärschlüssel ist"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Regel hilft, wenn sich ein technischer Schlüssel im Elternsatz ändert und Kindtabellen den neuen Wert übernehmen sollen?",
+            "options": ["ON UPDATE CASCADE", "GROUP BY UPDATE", "DEFAULT UPDATE", "TEXT UPDATE"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum sollte man Cascade-Regeln bewusst und nicht blind setzen?",
+            "options": [
+              "Weil sonst unbeabsichtigt viele abhängige Daten mitgelöscht oder verändert werden können",
+              "Weil sie Fremdschlüssel in Text umwandeln",
+              "Weil sie Datentypen unbrauchbar machen",
+              "Weil sie nur auf kleinen Bildschirmen funktionieren"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "d1",
+      "code": "D1",
+      "title": "Abfragen anwenden und Daten überprüfen",
+      "summary": "Daten gezielt auslesen, filtern, verknüpfen und auf Plausibilität prüfen.",
+      "levels": {
+        "G": [
+          {
+            "prompt": "Mit welchem SQL-Befehl liest du Daten aus einer Tabelle aus?",
+            "options": ["SELECT", "DELETE", "PAINT", "EXPORT"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wofür wird ORDER BY verwendet?",
+            "options": [
+              "Zum Sortieren des Abfrageergebnisses",
+              "Zum Löschen ganzer Tabellen",
+              "Zum Erstellen eines Fremdschlüssels",
+              "Zum Ändern des Zeichensatzes"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wozu dient GROUP BY in einer einfachen Auswertung?",
+            "options": [
+              "Zum Gruppieren gleicher Werte für Zusammenfassungen",
+              "Zum Hochladen von Bildern",
+              "Zum Ersetzen aller Datentypen",
+              "Zum Umbenennen der Datenbank"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Funktion zählt Datensätze in einer Abfrage?",
+            "options": ["COUNT", "COLOR", "EXPORT", "BUILD"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Warum ist es oft sinnvoll, in SELECT nur benötigte Spalten anzugeben?",
+            "options": [
+              "Weil das Ergebnis klarer und zielgerichteter wird",
+              "Weil dadurch Fremdschlüssel verschwinden",
+              "Weil Tabellen sonst nicht mehr existieren",
+              "Weil Datentypen nur so gültig sind"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "F": [
+          {
+            "prompt": "Welche Klausel filtert in einer Abfrage nur offene Tickets heraus?",
+            "options": ["WHERE status = 'offen'", "ORDER BY status", "GROUP BY status", "ALTER TABLE ticket"],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie verknüpfst du Bestellungen mit Kundennamen aus zwei Tabellen?",
+            "options": [
+              "Mit einem JOIN über den passenden Schlüssel",
+              "Mit einem Export in zwei Dateien",
+              "Mit einem zweiten Primärschlüssel pro Zeile",
+              "Mit einer Hintergrundfarbe"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie kombinierst du Filtern und Sortieren in einer sinnvollen Abfrage?",
+            "options": [
+              "Mit WHERE für die Auswahl und ORDER BY für die Reihenfolge",
+              "Nur mit GROUP BY",
+              "Mit CREATE TABLE",
+              "Mit dem Dateinamen der Tabelle"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Was liefert ein INNER JOIN typischerweise?",
+            "options": [
+              "Nur Datensätze, für die in beiden Tabellen passende Werte gefunden werden",
+              "Immer alle Zeilen aus allen Tabellen",
+              "Nur die Spaltennamen",
+              "Ausschliesslich NULL-Werte"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie filterst du Preise zwischen 10 und 20 sinnvoll?",
+            "options": [
+              "Mit einer WHERE-Bedingung für genau diesen Bereich",
+              "Nur mit ORDER BY",
+              "Mit DROP TABLE",
+              "Mit einem Textkommentar"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "E": [
+          {
+            "prompt": "Wie findest du doppelte E-Mail-Adressen am ehesten per Abfrage?",
+            "options": [
+              "Mit GROUP BY auf die E-Mail und einer Bedingung auf COUNT grösser als 1",
+              "Mit ORDER BY alleine",
+              "Mit CREATE DATABASE",
+              "Mit einem Export als PNG"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche einfache Prüfung hilft nach einem Import, um Vollständigkeit grob zu vergleichen?",
+            "options": [
+              "Die Anzahl Datensätze vor und nach dem Import vergleichen",
+              "Nur die Tabellenfarbe wechseln",
+              "Alle IDs neu generieren",
+              "Den Zeichensatz löschen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wofür kann eine Checksum- oder Hash-Prüfung bei Datenbeständen nützlich sein?",
+            "options": [
+              "Zum Erkennen, ob sich Daten zwischen zwei Ständen unerwartet geändert haben",
+              "Zum Sortieren nach Alphabet",
+              "Zum Erstellen neuer Tabellen ohne Struktur",
+              "Zum Umwandeln von Zahlen in Bilder"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Wie prüfst du per Abfrage, ob Pflichtfelder unerwartet leer geblieben sind?",
+            "options": [
+              "Mit einer Abfrage auf NULL-Werte in den relevanten Spalten",
+              "Mit einem Export nach Excel und reinem Augenschein",
+              "Mit GROUP BY ohne Bedingung",
+              "Mit dem Löschen aller Datensätze"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "prompt": "Welche Plausibilitätsprüfung hilft nach einer Migration oft zusätzlich zur Datensatzanzahl?",
+            "options": [
+              "Summen oder andere Kennzahlen zwischen Quelle und Ziel vergleichen",
+              "Nur die Tabellennamen ändern",
+              "Die Daten komplett neu sortieren",
+              "Alle Zahlen in Text umwandeln"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    }
+  ]
+}
+
+
