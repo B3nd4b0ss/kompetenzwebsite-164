@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>M164 Kompetenzquiz</title>
+		<title>M164 Kompetenzübungen</title>
 		<meta
 			name="description"
-			content="Interaktive Quizwebsite für M164 mit eigenen Fragen zu jeder Kompetenz und jeder Schwierigkeitsstufe." />
+			content="Interaktive Lernwebsite für M164 mit Theoriefragen und passenden Praxisaufgaben zu jeder Kompetenz und Schwierigkeitsstufe." />
 		<link rel="stylesheet" href="./styles.css" />
 	</head>
 	<body>
@@ -16,23 +16,27 @@
 					<p class="eyebrow">
 						M164 Datenbanken erstellen und Daten einfügen
 					</p>
-					<h1>Kompetenzen anklicken, Quiz starten, Score prüfen</h1>
+					<h1>Kompetenzen anklicken, Aufgaben lösen, Score prüfen</h1>
 					<p class="lead">
 						Wähle zuerst die Schwierigkeit und dann die passende
 						Kompetenz. Jede Kombination aus Kompetenz und
-						Schwierigkeit hat ein eigenes Quiz mit mindestens 5
-						selbst formulierten Fragen. Bestanden ist ein Quiz nur
-						mit mehr als 80&nbsp;% richtigen Antworten.
+						Schwierigkeit hat eigene Aufgaben. Wenn das
+						Kompetenzziel Anwenden, Umsetzen oder SQL verlangt,
+						erscheint zusätzlich eine passende Praxisaufgabe wie
+						ERD-Zuordnung, SQL-Bausteine oder Import-Ablauf.
+						Bestanden ist eine Auswahl ab 80&nbsp;%
+						richtigen Antworten.
 					</p>
 				</div>
 
 				<aside class="hero-panel">
-					<p class="panel-label">Quizregeln</p>
+					<p class="panel-label">Übungsregeln</p>
 					<ul class="rule-list">
-						<li>Ein Quiz pro Kompetenz und Schwierigkeit</li>
-						<li>Mindestens 5 Fragen pro Quiz</li>
+						<li>Eine Aufgabenauswahl pro Kompetenz und Schwierigkeit</li>
+						<li>Mindestens 5 Aufgaben pro Auswahl</li>
+						<li>Praxisaufgaben bei anwendungsorientierten Zielen</li>
 						<li>Auswertung erst am Ende</li>
-						<li>Bestanden nur bei mehr als 80 %</li>
+						<li>Bestanden ab 80 %</li>
 					</ul>
 					<a
 						class="source-link"
@@ -50,11 +54,13 @@
 						<p class="eyebrow">Kompetenzübersicht</p>
 						<h2>Wähle eine Kompetenz</h2>
 						<p class="section-copy">
-							Die Titel orientieren sich an M164. Die Fragen sind
-							eigens für diese Lernwebsite geschrieben und nicht
-							direkt aus der Matrix übernommen. Das angezeigte
-							Kompetenzziel pro Stufe stammt aus der offiziellen
-							Matrix.
+							Die Titel orientieren sich an M164. Die Aufgaben
+							sind eigens für diese Lernwebsite geschrieben und
+							nicht direkt aus der Matrix übernommen. Das
+							angezeigte Kompetenzziel pro Stufe stammt aus der
+							offiziellen Matrix. Bei Zielen, die kein reines
+							Erklären sind, wird eine passende interaktive
+							Praxisaufgabe eingeblendet.
 						</p>
 						<div class="difficulty-toolbar">
 							<p class="panel-label">Schwierigkeit filtern</p>
@@ -120,7 +126,7 @@
 					</button>
 
 					<div class="quiz-title-wrap">
-						<p class="eyebrow">Aktives Quiz</p>
+						<p class="eyebrow">Aktive Übung</p>
 						<h2 id="quiz-title">Noch keine Kompetenz gewählt</h2>
 						<p id="quiz-summary" class="section-copy"></p>
 						<div id="quiz-objective" class="objective-box"></div>
@@ -137,13 +143,13 @@
 							id="submit-button"
 							class="primary-button"
 							type="submit">
-							Quiz auswerten
+							Aufgaben auswerten
 						</button>
 						<button
 							id="restart-button"
 							class="ghost-button"
 							type="button">
-							Quiz neu starten
+							Übung neu starten
 						</button>
 					</div>
 				</form>
@@ -155,6 +161,7 @@
 			</section>
 		</main>
 
+		<script src="./practice-tasks.js"></script>
 		<script src="./script.js"></script>
 	</body>
 </html>
