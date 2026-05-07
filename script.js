@@ -851,8 +851,8 @@ function renderResultPanel() {
 
 	const outcomeClass = state.submission.passed ? 'is-pass' : 'is-fail';
 	const outcomeLabel = state.submission.passed
-		? 'Bestanden'
-		: 'Nicht bestanden';
+		? `${state.selectedCompetenceId + state.activeLevel} Bestanden`
+		: `${state.selectedCompetenceId + state.activeLevel} Nicht bestanden`;
 
 	resultPanel.hidden = false;
 	resultPanel.className = `result-panel ${outcomeClass}`;
